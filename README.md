@@ -1,4 +1,3 @@
 # Frank Ong's Website
 
-This website is built using [Gatsby](https://www.gatsbyjs.org).
-The `devel` branch contains the source code.
+This is written in static HTML with Bootstrap for styling and FontAwesome/Academicons for icons.
