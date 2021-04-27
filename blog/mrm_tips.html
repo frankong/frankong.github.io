@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <title>Frank Ong</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row my-4">
+	<div class="col-xs-12 col-md-7 mx-auto">
+	  <nav class="navbar navbar-expand-md navbar-light bg-light rounded border navbar-expand">
+	    <a class="navbar-brand ms-3" href='../index.html'>
+	      Frank Ong
+	    </a>
+	    <ul class="navbar-nav ms-auto">
+	      <li class="nav-item">
+		<a class="nav-link" href="index.html"><i class="fas fa-2x fa-blog"></i></a>
+	      </li>
+	      <li class="nav-item">
+		<a class="nav-link" href="mailto:frankongh@gmail.com"><i class="fas fa-2x fa-envelope"></i></a>
+	      </li>
+	      <li class="nav-item">
+		<a class="nav-link" href="https://github.com/frankong"><i class="fab fa-2x fa-github"></i></a>
+	      </li>
+	      <li class="nav-item me-3">
+		<a class="nav-link" href="https://scholar.google.com/citations?user=zAM1TkoAAAAJ"><i class="ai ai-2x ai-google-scholar"></i></a>
+	      </li>
+	    </ul>
+	  </nav>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-11 col-md-7 mx-auto">
+	  <center>
+	    <h4>
+	      Tips on Submitting an MRM Paper Written in Latex
+	    </h4>
+	  </center>
+	  <center>
+	    <p class="text-muted small">
+	      September 16, 2019
+	    </p>
+	  </center>
+	  <div>
+	    <p>
+	      A few days ago, I submitted a paper to the journal Magnetic Resonance in Medicine (MRM), and it took me over 2 hours just to “correctly” upload my Latex files.
+	    </p>
+	    <p>
+	      This is my third time submitting a paper to MRM, but I still forget what is the right way to format my Latex files.
+	      So I’ve decided to write this post to keep track of the tricks I know. I’ve learned some of them from my colleagues over the years. Hopefully this will be helpful for someone else.
+	    </p>
+
+	    <h5>1. Do not use Overleaf’s Wiley template</h5>
+	    <p>
+	      If you write your paper on Overleaf, you may be tempted to use the Wiley’s MRM template. After all, it is from the publisher. But this is a bad idea because the template actually does not conform with the journal’s author style guide. For example, it does not even have a title page. If you use this template, you’ll have to manually add all the requirements before submitting to MRM.
+	    </p>
+	    <p>
+	      Instead, you should always follow the <a class="link-secondary" href="https://wol-prod-cdn.literatumonline.com/pb-assets/assets/15222594/MRMStyleGuide-1519916220650.pdf">official MRM style guide pdf</a>, or use other unofficial templates that conform to the guide. Here’s a <a class="link-secondary" href="https://drive.google.com/open?id=1VLnL3AA7LigIpTTa2XwGbGpZocNl3OSF">bare-bone template</a> I created for myself.
+	    </p>
+	    
+	    <h5>2. Merge all .tex files into one giant file</h5>
+	    <p>
+	      In general, it is a good practice to separate Latex files into smaller parts, so that they are more organized and easily navigated. I usually have one .tex file for each section, and include the files with the <code>\input</code> command.
+	      
+	      But this is a bad idea for MRM submission. Because you can only upload three files at a time:
+	    </p>
+	  <center>
+	    <figure class="figure">
+	    <img src="../images/mrm_three_files.png" class="figure-img img-fluid rounded" alt="figure"/>
+	    </figure>
+	  </center>
+	    <p>
+	      And each upload can take a really really long time even when the files are small. So having as few latex files as possible will minimize your upload time. With Overleaf, I find that one Latex file is now acceptable to navigate around.
+	    </p>
+	    
+	    <h5>3. Do not use Safari</h5>
+	    <p>
+	      If you use Safari, then after uploading you will get the following error:
+	    </p>
+	  <center>
+	    <figure class="figure">
+	    <img src="../images/mrm_safari_error.png" class="figure-img img-fluid rounded" alt="figure"/>
+	    </figure>
+	  </center>
+	    <p>
+	      Your files may still be uploaded. Sometimes if you log out and re-log-on, the files will show up. But sometimes they don’t. So it’s better not to use Safari for MRM submission.
+	    </p>
+
+	    <h5>4. Upload your main latex file last</h5>
+	    <p>
+	      You may be tempted to upload your main latex file (or your only .tex file if you follow my advice above) first, because it is the main latex file. But for MRM submission, this can be a bad idea.
+	    </p>
+	    <p>
+	      That’s because once you designated a file as the “Main Document”, each time you upload anything, the server backend will try to recompile the latex files. This will make your uploading much slower than already is. Even if you upload something irrelevant, like a supporting video, it will still try to recompile your latex files like this:
+	    </p>
+	  <center>
+	    <figure class="figure">
+	    <img src="../images/mrm_upload_bar.png" class="figure-img img-fluid rounded" alt="figure"/>
+	    </figure>
+	  </center>
+	    <p>
+	      Instead, you should try to upload all other files, like images, supporting documents, and .bib file, before uploading your main latex file.
+	    </p>
+
+	    <h5>5. The Latex Log file is accumulative</h5>
+	    <p>
+	      When your latex compilation fails, you will get the chance to debug with the generated “Tex Processor Log”.
+	    </p>
+	  <center>
+	    <figure class="figure">
+	    <img src="../images/mrm_log.png" class="figure-img img-fluid rounded" alt="figure"/>
+	    </figure>
+	  </center>
+	    <p>
+	      One thing that can be really confusing is that the log file contains all logs from your previous compilations. So if you try to find errors by scrolling the log file from top to bottom, you may be confused by the errors you’ve already fixed.
+	    </p>
+
+	    <h5>6. Put figure numbers in image captions</h5>
+	    <p>
+	      When you upload figures, you will need to retype the image captions from the Latex files in the “Caption / Legend:” box.
+	      One thing that will be very helpful for reviewing afterwards is to retype the figure numbers as well. Like this:
+	    </p>
+	  <center>
+	    <figure class="figure">
+	    <img src="../images/mrm_figure_caption.png" class="figure-img img-fluid rounded" alt="figure"/>
+	    </figure>
+	  </center>
+	    <p>
+	      This makes it easy to check whether you have put in the right caption for the figure by looking at the thumbnails. Moreover, it will also make reviewers life much easier.
+	    </p>
+	    
+	    <h5>7. Convert PDF to EPS using <code>pdftops</code></h5>
+	    <p>
+	      This is pretty specific to my use case, but may be useful if you have your figures in pdf formats.
+	    </p>
+	    <p>
+	      I make all my figures in Adobe Illustrator, and output them as editable pdfs. Because the MRM submission only accepts .eps or .tiff for images, I need to convert .pdf files to .eps. (Because plots in .tiff are rasterized, I generally prefer .eps.) There is a 20MB limit on each uploaded eps file. The best way I’ve found to convert pdf files to eps in small sizes is using the command line utility <code>pdftops</code>.
+	    </p>
+
+	    <h5>8. Use natbib over biblatex for bibliograph</h5>
+	    <p>
+	      In general, I found the submission system works better with natbib than with biblatex. This is purely anecdotal, but I just couldn’t get it working with biblatex.
+	    </p>
+	    
+	    <h5>9. If all else fails, you can upload a pdf</h5>
+	    <p>
+	      But if your paper gets accepted, you will still need to upload the Latex files.
+	    </p>
+	  </div>
+
+
+	</div>
+      </div>
+
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script type="text/javascript" async
+	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://kit.fontawesome.com/bb51a9e61f.js" crossorigin="anonymous"></script>
+  </body>
+</html>
