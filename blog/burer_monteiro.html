@@ -70,14 +70,16 @@
 	    </center>
 	    <p>
 	      When \(n\) is large, it can be impractical to store and solve for the matrix \(\mathbf{X}\). Instead, the Burer-Monteiro factorization suggests solving directly for the low rank factors \(\mathbf{U}\). This results in
-	      \[\min_{\mathbf{U}} g(\mathbf{U}) := f(\mathbf{U} \mathbf{U}^*).\]
+	      \[
+	      \min_{\mathbf{U}} g(\mathbf{U}) := f(\mathbf{U} \mathbf{U}^*).
+	      \]
 
 	      This problem is no longer convex, so it is not clear whether we can find a global optimum.
 	    </p>
 	    <p>
 	      But we can still find something using iterative algorithms. In particular, it is still possible to solve for second-order stationary points (SOSPs), such that
 
-	      \[\begin{align} \nabla g(\mathbf{U}) &= 0 \\ \nabla^2 g(\mathbf{U}) &\succeq 0. \end{align}\]
+	      \begin{align} \nabla g(\mathbf{U}) &= 0 \\ \nabla^2 g(\mathbf{U}) &\succeq 0. \end{align}
 
 	    </p>
 
@@ -89,7 +91,9 @@
 	      But SOSPs are not necessarily global or even local optima. So to obtain optimality guarantees for these algorithms, our question becomes:
 	    </p>
 	    <center>
-	      When does an SOSP coincide with a global minimum?
+	      <p>
+		When does an SOSP coincide with a global minimum?
+	      </p>
 	    </center>
 
 	    <h5>Main Result</h5>
@@ -128,7 +132,7 @@
 	    </p>
 	    <p>
 	      Let us then expand the second order optimality conditions. Using the chain rule, we obtain the following expression for the gradient:
-	      \nabla g(\mathbf{U}) = \nabla f(\mathbf{U} \mathbf{U}^*) \mathbf{U} = 0.
+	      \[\nabla g(\mathbf{U}) = \nabla f(\mathbf{U} \mathbf{U}^*) \mathbf{U} = 0.\]
 	    </p>
 	    <p>
 	      Taking the inner product on both sides with \(\mathbf{U}^*\) gives us \(\langle\nabla f(\mathbf{X}), \mathbf{X}\rangle = 0\).
@@ -145,7 +149,7 @@
 	      Note that the first term is similar to what we want. Here’s where we use the fact \(\mathbf{U}\) is rank-deficient. In particular, we can choose \(\mathbf{V} = \mathbf{x} \mathbf{z}^*\) for any \(\mathbf{x}\), and for \(\mathbf{z}\) such that \(\|\mathbf{z}\|_2 = 1\) and \(\mathbf{z}\) is in the null space of \(\mathbf{U}\).
 	    </p>
 	    <p>
-	      Since \(\mathbf{U} \mathbf{z}= 0\), the second term gets canceled. Substituting \(\mathbf{V}\), and using \(\|\mathbf{z}\|_2 = 1\), we now have,
+	      Since \(\mathbf{U} \mathbf{z}= 0\), the second term gets cancelled. Substituting \(\mathbf{V}\), and using \(\|\mathbf{z}\|_2 = 1\), we now have,
 	      \[\mathbf{x}^* \nabla f( \mathbf{U} \mathbf{U}^*) \mathbf{x}  \geq 0,\]
 	      for all \(\mathbf{x}\). All three first-order optimality conditions are now satisfied, so \(\mathbf{X}=\mathbf{U} \mathbf{U}^*\) is optimal.
 	    </p>
