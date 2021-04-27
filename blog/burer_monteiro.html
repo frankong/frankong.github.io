@@ -49,10 +49,10 @@
 	  </center>
 	  <div>
 	    <p>
-	      The Burer-Monteiro factorization method [1, 2] is a powerful technique that can convert huge convex matrix problems into much smaller non-convex problems with optimality guarantees. At a high level, the method suggests that if you expect your solution to be of low rank, then you can solve for the low rank factors directly and check whether they are globally optimal.
+	      The Burer-Monteiro factorization method [<a class="text-secondary" href="#ref1">1</a>, <a class="text-secondary" href="#ref2">2</a>] is a powerful technique that can convert huge convex matrix problems into much smaller non-convex problems with optimality guarantees. At a high level, the method suggests that if you expect your solution to be of low rank, then you can solve for the low rank factors directly and check whether they are globally optimal.
 	    </p>
 	    <p>
-	      In this post, I will go through one of the theoretical guarantees for smooth unconstrained minimization problems, following [3, 4]. As you will see, the proof is actually quite simple to follow.
+	      In this post, I will go through one of the theoretical guarantees for smooth unconstrained minimization problems, following [<a class="text-secondary" href="#ref3">3</a>, <a class="text-secondary" href="#ref4">4</a>]. As you will see, the proof is actually quite simple to follow.
 	    </p>
 	    
 	    <h5>Problem Setup</h5>
@@ -84,7 +84,7 @@
 	    </p>
 
 	    <p>
-	      Second-order methods naturally converge to SOSPs. And so do gradient descent with random initialization [5], and variants of stochastic gradient descent [6, 7].
+	      Second-order methods naturally converge to SOSPs. And so do gradient descent with random initialization [<a class="text-secondary" href="#ref5">5</a>], and variants of stochastic gradient descent [<a class="text-secondary" href="#ref6">6</a>, <a class="text-secondary" href="#ref7">7</a>].
 	    </p>
 
 	    <p>
@@ -156,7 +156,7 @@
 
 	    <h5>Extensions</h5>
 	    <p>
-	      To ensure the Burer-Monteiro factorization always works for a problem, the rank deficient condition must be shown to hold for all SOSPs. [4, 8, 9] showed that SOSPs for almost all linear objectives (ie \(g(\mathbf{U}) = \langle\mathbf{C}, \mathbf{U} \mathbf{U}^*\rangle\)) are low rank, so we can always choose a large enough \(r\).
+	      To ensure the Burer-Monteiro factorization always works for a problem, the rank deficient condition must be shown to hold for all SOSPs. [<a class="text-secondary" href="#ref4">4</a>, <a class="text-secondary" href="#ref8">8</a>, <a class="text-secondary" href="#ref9">9</a>] showed that SOSPs for almost all linear objectives (ie \(g(\mathbf{U}) = \langle\mathbf{C}, \mathbf{U} \mathbf{U}^*\rangle\)) are low rank, so we can always choose a large enough \(r\).
 	    </p>
 	    <p>
 	      For constrained problems, the proof is quite similar, but <a class="link-secondary" href="https://en.wikipedia.org/wiki/Karush–Kuhn–Tucker_conditions#Regularity_conditions_(or_constraint_qualifications)">constraint qualifications</a> on the non-convex problem are additionally needed. While they are commonly assumed in non-convex optimization algorithms, I often find them difficult to check in practice.
@@ -167,15 +167,15 @@
 	    </p>
 	    <h5>References</h5>
 	    <ol>
-	      <li>S. Burer and R. D. C. Monteiro, “A nonlinear programming algorithm for solving semidefinite programs via low-rank factorization,” Mathematical Programming, vol. 95, no. 2, pp. 329–357, Feb. 2003.</li>
-	      <li>S. Burer and R. D. C. Monteiro, “Local Minima and Convergence in Low-Rank Semidefinite Programming,” Mathematical Programming, vol. 103, no. 3, pp. 427–444, Jul. 2005.</li>
-	      <li>M. Journée, F. Bach, P.-A. Absil, and R. Sepulchre, “Low-Rank Optimization on the Cone of Positive Semidefinite Matrices,” SIAM Journal on Optimization, vol. 20, no. 5, pp. 2327–2351, Jan. 2010.</li>
-	      <li>S. Bhojanapalli, N. Boumal, P. Jain, and P. Netrapalli, “Smoothed analysis for low-rank solutions to semidefinite programs in quadratic penalty form,” in Conference On Learning Theory, 2018, pp. 3243–3270.</li>
-	      <li>J. D. Lee, I. Panageas, G. Piliouras, M. Simchowitz, M. I. Jordan, and B. Recht, “First-order methods almost always avoid strict saddle points,” Math. Program., Feb. 2019.</li>
-	      <li>R. Pemantle, “Nonconvergence to Unstable Points in Urn Models and Stochastic Approximations,” Ann. Probab., vol. 18, no. 2, pp. 698–712, Apr. 1990.</li>
-	      <li>R. Ge, F. Huang, C. Jin, and Y. Yuan, “Escaping From Saddle Points — Online Stochastic Gradient for Tensor Decomposition,” arXiv:1503.02101 [cs, math, stat], Mar. 2015.</li>
-	      <li>N. Boumal, V. Voroninski, and A. S. Bandeira, “The non-convex Burer-Monteiro approach works on smooth semidefinite programs,” arXiv:1606.04970 [cs, math], Jun. 2016.</li>
-	      <li>D. Cifuentes, “Burer-Monteiro guarantees for general semidefinite programs,” arXiv:1904.07147 [math], Apr. 2019.</li>
+	      <li><a name="ref1">S. Burer and R. D. C. Monteiro, “A nonlinear programming algorithm for solving semidefinite programs via low-rank factorization,” Mathematical Programming, vol. 95, no. 2, pp. 329–357, Feb. 2003.</a></li>
+	      <li><a name="ref2">S. Burer and R. D. C. Monteiro, “Local Minima and Convergence in Low-Rank Semidefinite Programming,” Mathematical Programming, vol. 103, no. 3, pp. 427–444, Jul. 2005.</a></li>
+	      <li><a name="ref3">M. Journée, F. Bach, P.-A. Absil, and R. Sepulchre, “Low-Rank Optimization on the Cone of Positive Semidefinite Matrices,” SIAM Journal on Optimization, vol. 20, no. 5, pp. 2327–2351, Jan. 2010.</a></li>
+	      <li><a name="ref4">S. Bhojanapalli, N. Boumal, P. Jain, and P. Netrapalli, “Smoothed analysis for low-rank solutions to semidefinite programs in quadratic penalty form,” in Conference On Learning Theory, 2018, pp. 3243–3270.</a></li>
+	      <li><a name="ref5">J. D. Lee, I. Panageas, G. Piliouras, M. Simchowitz, M. I. Jordan, and B. Recht, “First-order methods almost always avoid strict saddle points,” Math. Program., Feb. 2019.</a></li>
+	      <li><a name="ref6">R. Pemantle, “Nonconvergence to Unstable Points in Urn Models and Stochastic Approximations,” Ann. Probab., vol. 18, no. 2, pp. 698–712, Apr. 1990.</a></li>
+	      <li><a name="ref7">R. Ge, F. Huang, C. Jin, and Y. Yuan, “Escaping From Saddle Points — Online Stochastic Gradient for Tensor Decomposition,” arXiv:1503.02101 [cs, math, stat], Mar. 2015.</a></li>
+	      <li><a name="ref8">N. Boumal, V. Voroninski, and A. S. Bandeira, “The non-convex Burer-Monteiro approach works on smooth semidefinite programs,” arXiv:1606.04970 [cs, math], Jun. 2016.</a></li>
+	      <li><a name="ref9">D. Cifuentes, “Burer-Monteiro guarantees for general semidefinite programs,” arXiv:1904.07147 [math], Apr. 2019.</a></li>
 	    </ol>
 
 
