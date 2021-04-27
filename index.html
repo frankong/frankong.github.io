@@ -14,13 +14,13 @@
       <div class="row my-4">
 	<div class="col-xs-12 col-md-7 mx-auto">
 	  <nav class="navbar navbar-expand-md navbar-light bg-light rounded border navbar-expand">
-	    <a class="navbar-brand ms-3" href='/'>
+	    <a class="navbar-brand ms-3" href='#'>
 	      Frank Ong
 	    </a>
 	    <ul class="navbar-nav ms-auto">
-	      <!-- <li class="nav-item"> -->
-	      <!-- 	<a class="nav-link" href="blog/index.html"><i class="fas fa-2x fa-blog"></i></a> -->
-	      <!-- </li> -->
+	      <li class="nav-item">
+		<a class="nav-link" href="blog/index.html"><i class="fas fa-2x fa-blog"></i></a>
+	      </li>
 	      <li class="nav-item">
 		<a class="nav-link" href="mailto:frankongh@gmail.com"><i class="fas fa-2x fa-envelope"></i></a>
 	      </li>
@@ -43,11 +43,10 @@
 	      <img src="images/me.jpg" class="rounded-circle mr-3" width="150" alt=""/>
 	    </p>
 	  </center>
-	  <div style="text-align: justify;">
-	    <p>
-	      Hi! I'm an applied scientist at Amazon working on visual search. Before that, I was a research associate at Stanford, working with <a class="text-secondary" href="https://profiles.stanford.edu/shreyas-vasanawala">Shreyas Vasanawala</a> and <a class="text-secondary" href="https://web.stanford.edu/~pauly/">John Pauly</a> on computational medical imaging. 
-	      I did my undergrad (2013) and PhD (2018) at UC Berkeley, where I had the pleasure to work with <a class="text-secondary" href="https://people.eecs.berkeley.edu/~mlustig/">Miki Lustig</a> for many years.
-	      In my Berkeley days, I have also collaborated with <a class="text-secondary" href="https://people.eecs.berkeley.edu/~kannanr/">Kannan Ramchandran</a> on sparse FFT algorithms. And I did a wonderful summer internship with <a class="text-secondary" href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a> at Google on kernel methods.
+	  <div>
+	    I'm an applied scientist at Amazon working on visual search. Before that, I was a research associate at Stanford, working with <a class="link-secondary" href="https://profiles.stanford.edu/shreyas-vasanawala">Shreyas Vasanawala</a> and <a class="link-secondary" href="https://web.stanford.edu/~pauly/">John Pauly</a> on computational medical imaging. 
+	      I did my undergrad (2013) and PhD (2018) at UC Berkeley, where I had the pleasure to work with <a class="link-secondary" href="https://people.eecs.berkeley.edu/~mlustig/">Miki Lustig</a> for many years.
+	      In my Berkeley days, I have also collaborated with <a class="link-secondary" href="https://people.eecs.berkeley.edu/~kannanr/">Kannan Ramchandran</a> on sparse FFT algorithms. And I did a wonderful summer internship with <a class="link-secondary" href="https://sites.google.com/view/milanfarhome/">Peyman Milanfar</a> at Google on kernel methods.
 	    </p>
 	    <p>
 	      I am generally interested in data science, signal processing, and computational imaging. A lot of my projects involve recoverying high dimensional data from corrupted and underdetermined measurement systems. Motivated by such problems, I have developed sparse data representations, fast iterative algorithms, and open source high performance software packages.
@@ -83,9 +82,8 @@
 	      <img src="images/slfrank.png" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
-	    <p>
-	      The Shinnar-Le-Roux (SLR) algorithm is widely used to design frequency selective MRI RF pulses with large flip angles. We improve its design process to generate pulses with lower energy (by as much as 26%) and more accurate phase profiles using rank factorization techniques.
+	  <div>
+	    We improve its design process to generate pulses with lower energy (by as much as 26%) and more accurate phase profiles using rank factorization techniques.
 	    </p>
 	  </div>
 	  <center>
@@ -124,7 +122,7 @@
 	      <img src="images/extreme_mri.gif" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      This project develops a framework to reconstruct large-scale volumetric dynamic MRI from rapid continuous and non-gated acquisitions. The problem considered here requires recovering ~100GBs of data from a few GBs of measurements. We propose two innovations: (1) A compressed representation using multi-scale low rank matrix factorization. (2) Stochastic optimization to reduce computation. We demonstrate the feasibility of the proposed method on DCE and pulmonary imaging.
 	    </p>
@@ -166,7 +164,7 @@
 	      <img src="images/sigpy.png" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      SigPy is a Python package for signal processing, with emphasis on iterative methods. It is built to operate directly on NumPy arrays on CPU and CuPy arrays on GPU. SigPy provides several domain-specific submodules: sigpy.plot for multi-dimensional array plotting, sigpy.mri for MRI iterative reconstruction, and sigpy.learn for machine learning.
 	    </p>
@@ -205,7 +203,7 @@
 	      <img src="images/kspace_precond.gif" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      We propose a k-space preconditioning formulation for accelerating the convergence of iterative MRI reconstructions from non-uniformly sampled data. Existing methods either use sampling density compensations which sacrifice reconstruction accuracy, or circulant preconditioners which increase per-iteration computation. Our approach overcomes both shortcomings. Concretely, we show that viewing the reconstruction problem in the convex dual formulation allows us to precondition in k-space using density-compensation-like operations.
 	    </p>
@@ -246,7 +244,7 @@
 	      <img src="images/kernel_proximal.jpg" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      In this work, we broadly connect kernel-based filtering with general variational formulations of Bayesian regularized least squares. The latter set of Bayesian formulations often result in optimization problems that do not have closed-form solutions, and therefore typically require global iterative solutions. Our main contribution here is to establish how one can approximate the solution of the resulting global optimization problems with use of locally adaptive filters with specific kernels.
 	    </p>
@@ -284,7 +282,7 @@
 	      <img src="images/phase_cycling.jpg" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      We study the problem of enforcing phase constraints in reconstruction under a regularized inverse problem framework. We propose a general phase regularized reconstruction algorithm to enable various joint reconstruction of partial Fourier imaging, water-fat imaging and flow imaging. Since phase regularized reconstruction is inherently non-convex and sensitive to phase wraps in the initial solution, we develop a reconstruction technique, named phase cycling, to render the overall algorithm invariant to phase wraps.
 	    </p>
@@ -325,7 +323,7 @@
 	      <img src="images/mslr.gif" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      We present a natural generalization of the low rank + sparse matrix decomposition and consider the decomposition of matrices into components of multiple scales. Concretely, we propose a multi-scale low rank modeling that represents a data matrix as a sum of block-wise low rank matrices with increasing scales of block sizes. We then consider the inverse problem of decomposing the data matrix into its multi-scale low rank components and approach the problem via a convex formulation. We provide theoretical recovery guarantees and practical applications.
 	    </p>
@@ -365,7 +363,7 @@
 	      <img src="images/mridata.png" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      mridata.org is an open platform for researchers to share MRI raw k-space datasets. This web site provides open datasets to researchers who desire to contribute to a community of reproducible research, where they can test and validate their algorithms against known undersampled acquisitions.
 	    </p>
@@ -406,7 +404,7 @@
 	      <img src="images/bart.png" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      The Berkeley Advanced Reconstruction Toolbox (BART) is a free and open-source image-reconstruction framework for computational MRI developed by the research groups of Martin Uecker and Michael Lustig. I was an active developer for many years til 2017. BART provides common operations on multi-dimensional arrays, Fourier and wavelet transforms, as well as generic implementations of iterative optimization algorithms. The command-line tools provide direct access to basic operations on multi-dimensional arrays as well as efficient implementations of many calibration and reconstruction algorithms for parallel imaging and compressed sensing.
 	    </p>
@@ -445,7 +443,7 @@
 	      <img src="images/2d_ffast.png" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      We present a algorithm, named the 2D-FFAST, to compute a sparse 2D-DFT featuring both low sample complexity and low computational complexity. The proposed algorithm is based on mixed concepts from signal processing (sub-sampling and aliasing), coding theory (sparse-graph codes) and number theory (Chinese-remainder-theorem). Concretely, the 2D-FFAST algorithm computes a k-sparse 2D-DFT, with a uniformly random support, of size N = Nx x Ny using O(k) noiseless spatial-domain measurements in O(k log k) computational time.
 	    </p>
@@ -485,7 +483,7 @@
 	      <img src="images/dfw.gif" class="figure-img img-fluid rounded" alt="figure"/>
 	    </figure>
 	  </center>
-	  <div style="text-align: justify;">
+	  <div>
 	    <p>
 	      We investigate 4D flow denoising using the divergence-free wavelet (DFW) transform. DFW is a vector-wavelet that provides a sparse representation of flow in a generally divergence-free field. It can be used to enforce “soft” divergence-free conditions when discretization and partial voluming result in numerical nondivergence-free components. Efficient denoising is achieved by appropriate shrinkage of divergence-free waveletand non-divergence-free coefficients.
 	    </p>
@@ -504,14 +502,6 @@
       
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script type="text/javascript" async
-	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://kit.fontawesome.com/bb51a9e61f.js" crossorigin="anonymous"></script>
-    <script>
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-	  return new bootstrap.Tooltip(tooltipTriggerEl)
-      })
-    </script>
   </body>
 </html>
