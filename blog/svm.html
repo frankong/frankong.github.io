@@ -48,19 +48,19 @@
 	  </center>
 	  <div>
 	    <p>
-	      The usual way of teaching support vector machine (SVM) is done through a binary classification point of view. There is a picture of pluses and minuses with a hyperplane separating them. A lot of emphasis is put on linear SVMs and margin. The generalization to the non-linear case is often done as an afterthought through the "kernel trick". 
+	      I find the usual way of explaining support vector machines (SVM) confusing. It starts from a binary classification point of view. There is a picture of pluses and minuses with a hyperplane separating them. A lot of emphasis is on the margins and hyperplane in the linear case. The generalization to the non-linear case is almost done as an afterthought with the "kernel trick". 
 	    </p>
 	    <p>
-	      Instead, I find it easier to understand SVM through a kernel regression point of view. We get the non-linear case directly. We get a picture of curves fitting through points. The optimization problem is simpler. And as you'll see, there's a clear connection to \(\ell 1\) regularized regression, with sparse elements corresponding to support vectors.
+	      Instead, I find it more satisfying to understand SVM through a kernel regression point of view. The picture becomes a curve fitting through data points. We get the non-linear case directly. The optimization problem is conceptually simpler. And there's a clear connection to \(\ell 1\) regularized regression, which links support vectors to sparsity.
 	    </p>
 	    <p>
-	      Our problem setup is as follows. We have training data points \((x_1, y_1), \ldots, (x_n, y_n).\) They can be scalars or vectors. And we want to fit a function \(f(x)\) such that \(f(x_i) \approx y_i.\)
+	      Our problem setup is as follows. We have training data points \((x_1, y_1), \ldots, (x_n, y_n).\) For simplicity, everything is a scalar. And we want to fit a function \(f(x)\) such that \(f(x_i) \approx y_i.\)
 	    </p>
 	    <p>
-	      Solving this problem directly is ill-posed because there are infinitely many ways to fit a curve to finite points. So we need to restrict the problem somehow. The kernel regression way is to constrain the function to be in a "kernel space". 
+	      There are infinitely many ways to fit a curve to finite points, so we need to somehow restrict the problem. The kernel regression way is to constrain the function to be in a "kernel space". At a high level, a kernel is a function that takes two inputs and outputs one scalar. A "kernel space" contains all linear combination of  kernel functions with one input fixed.
 	    </p>
 	    <p>
-	      Concretely, given a positive semi-definite kernel \(\mathcal{K}(x, z)\), we can construct a corresponding reproducible kernel Hilbert space (RKHS) \(\mathbb{H}\). An RKHS is basically a function space that contains every sum of kernel functions like this,
+	      Concretely, given a <a href="https://en.wikipedia.org/wiki/Positive-definite_kernel">positive semi-definite kernel</a> \(\mathcal{K}(x, z)\), we can construct a corresponding reproducible kernel Hilbert space (RKHS) \(\mathbb{H}\). An RKHS is a function space that contains every sum of kernel functions like this,
 	      \[
 	      f(x) = \sum_{i = 1}^n \mathcal{K}(x, z_i),
 	      \]
@@ -76,7 +76,7 @@
 	      And this basically transforms our function fitting problem to a linear inverse problem in the function space. Because \(f(x_i) \approx y_i\) now becomes \(\langle f, \mathcal{K}(x, x_i) \rangle \approx y_i\).
 	    </p>
 	    <p>
-	      What's left is choosing a loss function. We choose a very particular one like this
+	      What's left is choosing a loss function. Kernel regression intersects with SVM when we pick a maximum deviation error loss as follow,
 	      \[
 	      | f(x_i) - y_i | \leq \epsilon,
 	      \]
@@ -91,20 +91,25 @@
 	      for \(i = 1, \ldots, n\)
 	    </p>
 	    <p>
-	      And that's it. This is an SVM. Some people call it <a href="https://alex.smola.org/papers/2004/SmoSch04.pdf">"support vector regression with hard margin"</a>. It is not the usual form people use, but it is still an SVM.
+	      And that's it. This is an SVM. Some people call it <a href="https://alex.smola.org/papers/2004/SmoSch04.pdf">"\(\epsilon\)-insensitive support vector regression"</a>. It is not the usual form, but it is still an SVM.
 	    </p>
 	    <p>
-	      You can also see the connection to \(\ell 1\) regularized regression. The loss function we used is an \(\ell_\infty\) ball constraint. So the dual problem is an \(\ell 1\) problem. You can derive the dual problem with Lagrangian, and it becomes:
+	      You can also see the connection to \(\ell 1\) regularized regression. The loss function we used is an \(\ell_\infty\) ball constraint. So its dual is an \(\ell 1\) penalty. You can derive the dual problem with Lagrangian, and it becomes:
 	      \[
 	      \min_{\boldsymbol{\alpha}} \frac{1}{2} \boldsymbol{\alpha}^\top \mathbf{K} \boldsymbol{\alpha} - \boldsymbol{\alpha}^\top \mathbf{y} + \epsilon \| \boldsymbol{\alpha}\|_1
 	      \]
 	      where \(\boldsymbol{\alpha}\) is the dual variable. \(\mathbf{K}\) is the kernel matrix with \((\mathbf{K})_{ij} = \mathcal{K}(x_i, x_j)\), and \(\mathbf{y}\) is the vectorized output.
 	    </p>
 	    <p>
-	      Finally, the primal and dual variables are related as follows:
+	      And the primal and dual variables are related as follows:
 	      \[
 	      f(x) = \sum_{i = 1}^n \alpha_i \mathcal{K}(x, x_i)
 	      \]
+	    </p>
+	    <p>
+	      Our dual variable \(\boldsymbol{\alpha}\) is sparse because of the \(\ell 1\) regularized optimization. The training data \(x_i\) with non-zero coefficents are called support vectors.
+	    </p>
+	    
 	  </div>
 	</div>
 
