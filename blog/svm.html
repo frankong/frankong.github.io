@@ -6,7 +6,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <title>Frank Ong</title>
+    <title>Support Vector Machine</title>
   </head>
   <body>
     <div class="container">
@@ -38,7 +38,7 @@
 	<div class="col-11 col-md-7 mx-auto">
 	  <center>
 	    <h4>
-	      Support Vector Machine (SVM)
+	      Support Vector Machine
 	    </h4>
 	  </center>
 	  <center>
@@ -48,10 +48,10 @@
 	  </center>
 	  <div>
 	    <p>
-	      I find the usual way of explaining support vector machines (SVM) confusing. It starts from a binary classification point of view. There is a picture of pluses and minuses with a hyperplane separating them. A lot of emphasis is on the margins and hyperplane in the linear case. The generalization to the non-linear case is almost done as an afterthought with the "kernel trick". 
+	      The usual way of explaining support vector machines (SVM) is through  a binary classification point of view. There is a picture of pluses and minuses with a hyperplane separating them. A lot of time is spent on the margins and hyperplane in the linear case. The generalization to the non-linear case is almost done as an afterthought with the "kernel trick". 
 	    </p>
 	    <p>
-	      Instead, I find it more satisfying to understand SVM through a kernel regression point of view. The picture becomes a curve fitting through data points. We get the non-linear case directly. The optimization problem is conceptually simpler. And there's a clear connection to \(\ell 1\) regularized regression, which links support vectors to sparsity.
+	      Instead, I find it more intuitive to understand SVM through a kernel regression point of view. The picture becomes a curve fitting through data points. We get the non-linear case directly. The optimization problem is conceptually simpler. And there's a clear connection to \(\ell 1\) regularized regression, which links support vectors to sparsity.
 	    </p>
 	    <p>
 	      Our problem setup is as follows. We have training data points \((x_1, y_1), \ldots, (x_n, y_n).\) For simplicity, everything is a scalar. And we want to fit a function \(f(x)\) such that \(f(x_i) \approx y_i.\)
@@ -60,7 +60,7 @@
 	      There are infinitely many ways to fit a curve to finite points, so we need to somehow restrict the problem. The kernel regression way is to constrain the function to be in a "kernel space". At a high level, a kernel is a function that takes two inputs and outputs one scalar. A "kernel space" contains all linear combination of  kernel functions with one input fixed.
 	    </p>
 	    <p>
-	      Concretely, given a <a href="https://en.wikipedia.org/wiki/Positive-definite_kernel">positive semi-definite kernel</a> \(\mathcal{K}(x, z)\), we can construct a corresponding reproducible kernel Hilbert space (RKHS) \(\mathbb{H}\). An RKHS is a function space that contains every sum of kernel functions like this,
+	      Concretely, given a <a class="link-secondary" href="https://en.wikipedia.org/wiki/Positive-definite_kernel">positive semi-definite kernel</a> \(\mathcal{K}(x, z)\), we can construct a corresponding reproducible kernel Hilbert space (RKHS) \(\mathbb{H}\). An RKHS is a function space that contains every sum of kernel functions like this,
 	      \[
 	      f(x) = \sum_{i = 1}^n \mathcal{K}(x, z_i),
 	      \]
@@ -91,7 +91,7 @@
 	      for \(i = 1, \ldots, n\)
 	    </p>
 	    <p>
-	      And that's it. This is an SVM. Some people call it <a href="https://alex.smola.org/papers/2004/SmoSch04.pdf">"\(\epsilon\)-insensitive support vector regression"</a>. It is not the usual form, but it is still an SVM.
+	      And that's it. This is an SVM. Some people call it <a class="link-secondary" href="https://alex.smola.org/papers/2004/SmoSch04.pdf">"\(\epsilon\)-insensitive support vector regression"</a>. It is not the usual form, but it is still an SVM.
 	    </p>
 	    <p>
 	      You can also see the connection to \(\ell 1\) regularized regression. The loss function we used is an \(\ell_\infty\) ball constraint. So its dual is an \(\ell 1\) penalty. You can derive the dual problem with Lagrangian, and it becomes:
