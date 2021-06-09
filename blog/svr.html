@@ -81,8 +81,7 @@
 	      We have training data points \((x_1, y_1), \ldots, (x_n, y_n).\) They can be scalars, vectors, real-valued or complex valued. Our goal is to fit a function \(f(x)\) to the data points.
 	    </p>
 	    <p>
-	      Because the data points may have some noise, we only want the function to approximate them. There are many loss functions we can choose, but SVR considers a particular one: a uniform error bound
-	      with an tolerance \(\epsilon\), that is
+	      Because the data points may have some noise, we only want the function to approximate them. SVR considers a very particular loss function: a uniform error bound with an tolerance \(\epsilon\), that is
 	      \[
 	      | f(x_i) - y_i | \leq \epsilon,
 	      \]
