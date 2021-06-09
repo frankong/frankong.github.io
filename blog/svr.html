@@ -55,10 +55,10 @@
 	  </center>
 	  <div>
 	    <p>
-	      Support vector machines (SVM) are usually explained through a binary classification point of view. But I find it much easier to understand through a regression point of view.
+	      Support vector machines (SVM) are usually explained through a binary classification point of view. But recently, I find out you can also use SVM for regression <a class="link-secondary" href="#ref1">[1]</a>. And I find it so much easier to understand.
 	    </p>
 	    <p>
-	    Instead of a picture with a hyperplane separating pluses and minuses like this:
+	    Instead of a picture with a hyperplane separating pluses and minuses for binary classification like this:
 	    </p>
 	    <center>
 	      <figure class="figure">
@@ -74,14 +74,14 @@
 	      </figure>
 	    </center>
 	    <p>
-	      In the following, I will go through SVM for regression, also known as SVR. I will do so in the kernel regression framework to make the formulation extremely simple. I will also show a connection to \(\ell 1\) regularized regression, which links support vectors to sparsity. Finally, I will formulate SVM for binary classification in the same framework.
+	      In the following, I will go through SVM for regression, also known as SVR. I will do so in the kernel regression framework, which makes the formulation extremely simple. The derivation will also show a connection to \(\ell 1\) regularized regression, which links support vectors to sparsity. Finally, I will formulate SVM for binary classification in the same framework.
 	    </p>
 	    <h5>Problem Setup</h5>
 	    <p>
 	      We have training data points \((x_1, y_1), \ldots, (x_n, y_n).\) They can be scalars, vectors, real-valued or complex valued. Our goal is to fit a function \(f(x)\) to the data points.
 	    </p>
 	    <p>
-	      Because the data points may have some noise, we only want the function to approximate them. SVR considers a very particular loss function: a uniform error bound with an tolerance \(\epsilon\), that is
+	      Because the data points may have some noise, we only want the function to approximate them. SVR considers a very particular loss function: a uniform error bound with a tolerance \(\epsilon\), that is
 	      \[
 	      | f(x_i) - y_i | \leq \epsilon,
 	      \]
@@ -108,8 +108,8 @@
 	    </p>
 	    <h5>SVR</h5>
 	    <p>
-	      In SVR, we have the error constraints \(|f(x_i) - y_i| \leq \epsilon\). And to regularize the problem, we minimize the norm of the function \(f\).
-	      Putting things together, we have the following kernel regression problem:
+	      In SVR, we have the error constraints \(|f(x_i) - y_i| \leq \epsilon\). And to regularize the problem, we minimize the norm of the function \(\| f \|_{\mathbb{H}}\).
+	      Putting things together, we have the following regression problem:
 	      \begin{align}
 	      &\min_{f \in \mathbb{H}} &&\| f \|_{\mathbb{H}}\\
 	      &\text{s.t.} && |f(x_i) - y_i| \leq \epsilon
@@ -117,16 +117,16 @@
 	      for \(i = 1, \ldots, n.\)
 	    </p>
 	    <p>
-	      And that's it. This is the optimization problem for SVR. It is not the most general form. Some people call it <a class="link-secondary" href="https://alex.smola.org/papers/2004/SmoSch04.pdf">"\(\epsilon\)-insensitive support vector regression"</a>. But it is still an SVR. Conceptually, it is simple. We want to fit a function to data points with minimum norm under some error tolerance.
+	      And that's it. This is the optimization problem for SVR. It is not the most general form. Some people call it "\(\epsilon\)-insensitive support vector regression" <a class="link-secondary" href="#ref1">[1]</a>. But it is still an SVR. Conceptually, it is simple. We want to fit a function to data points with minimum norm under some error tolerance.
 	    </p>
 	    <h5>Dual Problem</h5>
 	    <p>
 	      We are not done yet because the optimization variable is a function and we cannot solve it on a computer. To turn it into a finite optimization problem, we can look at its dual form.
 	    </p>
 	    <p>
-	      To derive the dual problem, we will use the following RKHS property: Evaluating an RKHS function \(f\) at any point \(x'\) is an inner product operation:
+	      To derive the dual problem, we will use the following RKHS property: Evaluating an RKHS function \(f\) at any point \(x'\) is an inner product operation, that is,
 	      \[
-	      f(x') = \langle f, \mathcal{K}(x, x') \rangle
+	      f(x') = \langle f, \mathcal{K}(x, x') \rangle.
 	      \]
 	    </p>
 	    <p>
@@ -191,6 +191,11 @@
 	    <h5>Summary</h5>
 	    <p>
 	      I have shown a formulation of SVM for regression that is basically "fitting a curve through points with some error". To me, this is much simpler and easier to understand than the usual formulation of SVM for binary classification. The \(\ell 1\) regularization is also a nice connection.
+	    </p>
+	    <h5>References</h5>
+	    <ol>
+	      <li><a name="ref1">Smola, Alex J., and Bernhard Schölkopf. “A Tutorial on Support Vector Regression.” Statistics and Computing 14, no. 3 (August 2004): 199–222. https://doi.org/10.1023/B:STCO.0000035301.49549.88.</a></li>
+	    </ol>
 	    </p>
 	  </div>
 	</div>
