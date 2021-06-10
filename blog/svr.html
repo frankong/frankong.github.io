@@ -62,7 +62,7 @@
 	    </p>
 	    <center>
 	      <figure class="figure">
-		<img src="../images/svm.png" class="figure-img img-fluid" alt="svm"/>
+		<img src="../images/svm.jpg" class="figure-img img-fluid" alt="svm"/>
 	      </figure>
 	    </center>
 	    <p>
@@ -70,7 +70,7 @@
 	    </p>
 	    <center>
 	      <figure class="figure">
-		<img src="../images/svr.png" class="figure-img img-fluid" alt="svr"/>
+		<img src="../images/svr.jpg" class="figure-img img-fluid" alt="svr"/>
 	      </figure>
 	    </center>
 	    <p>
@@ -96,7 +96,7 @@
 	    </p>
 	    <center>
 	      <figure class="figure">
-		<img src="../images/rkhs.png" class="figure-img img-fluid" alt="rkhs"/>
+		<img src="../images/rkhs.jpg" class="figure-img img-fluid" alt="rkhs"/>
 	      </figure>
 	    </center>
 	    <p>
@@ -135,9 +135,9 @@
 	    <p>
 	      Next, we derive the dual problem with the Lagrangian formulation. We split the error constraints into upper and lower bound and assign \(\alpha^+_i\) and \(\alpha^-_i\) as their Lagrangian variables. Then we have the following Lagrangian formulation:
 	      \begin{align}
-	      &\min_{f} \max_{\alpha^{+}_i \geq 0, \alpha^{-}_i \geq 0} &&\frac{1}{2}\| f \|_{\mathbb{H}}^2 \\
-	      &&&- \sum_{i = 1}^n \alpha_i^+ (\langle f, \mathcal{K}(x, x_i) \rangle - y_i - \epsilon) \\
-	      &&&- \sum_{i = 1}^n \alpha_i^- (-\langle f, \mathcal{K}(x, x_i) \rangle + y_i - \epsilon)
+	      &\min_{f} \max_{\alpha^{+}_i \geq 0, \alpha^{-}_i \geq 0} \frac{1}{2}\| f \|_{\mathbb{H}}^2 \\
+	      &- \sum_{i = 1}^n \alpha_i^+ (\langle f, \mathcal{K}(x, x_i) \rangle - y_i - \epsilon) \\
+	      &- \sum_{i = 1}^n \alpha_i^- (-\langle f, \mathcal{K}(x, x_i) \rangle + y_i - \epsilon)
 	      \end{align}
 	    </p>
 	    <p>
@@ -175,7 +175,7 @@
 	    </p>
 	    <center>
 	      <figure class="figure">
-		<img src="../images/svr_binary.png" class="figure-img img-fluid" alt="svr_binary"/>
+		<img src="../images/svr_binary.jpg" class="figure-img img-fluid" alt="svr_binary"/>
 	      </figure>
 	    </center>
 	    <p>
