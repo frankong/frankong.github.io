@@ -155,7 +155,7 @@
 	    <p>
 	      Plugging this back to the maximin problem, and observing that \(\alpha_i^+ + \alpha_i^- = | \alpha_i |\), we obtain the following dual problem
 	      \[
-	      \min_{\boldsymbol{\alpha}} \frac{1}{2} \boldsymbol{\alpha}^\top \mathbf{K} \boldsymbol{\alpha} - \boldsymbol{\alpha}^\top \mathbf{y} + \epsilon \| \boldsymbol{\alpha}\|_1
+	      -\left(\min_{\boldsymbol{\alpha}} \frac{1}{2} \boldsymbol{\alpha}^\top \mathbf{K} \boldsymbol{\alpha} - \boldsymbol{\alpha}^\top \mathbf{y} + \epsilon \| \boldsymbol{\alpha}\|_1\right)
 	      \]
 	      where \(\boldsymbol{\alpha}\) is the vectorized dual variable. \(\mathbf{K}\) is the kernel matrix with \((\mathbf{K})_{ij} = \mathcal{K}(x_i, x_j)\), and \(\mathbf{y}\) is the vectorized output.
 	    </p>
