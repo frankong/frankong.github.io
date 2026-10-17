@@ -7,36 +7,19 @@
     <title>Frank Ong</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <style>
-      .work-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px 16px;
-      }
-      .work-grid figure { margin: 0; }
-      .work-grid img,
-      .work-grid video {
+      .research-video {
         display: block;
         width: 100%;
+        max-width: 420px;
         height: auto;
-        aspect-ratio: 3 / 2;
-        object-fit: contain;
+        margin: 0 auto;
+        background: #000;
         border-radius: 4px;
-      }
-      .work-grid video { background: #000; }
-      .work-grid figcaption {
-        margin-top: 6px;
-        font-size: 0.875rem;
-        text-align: center;
-      }
-      .work-grid a:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 3px;
       }
       @media (max-width: 575px) {
         .navbar { justify-content: center; flex-wrap: wrap; }
         .navbar-brand { width: 100%; margin: 0 !important; text-align: center; }
         .navbar-nav { margin: 0 auto !important; }
-        .work-grid { grid-template-columns: 1fr; }
       }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -77,57 +60,19 @@
             Previously, I led machine learning for discovery at Roblox.
           </p>
           <p>
-            In a past life, I worked on large-scale computational imaging at Stanford and UC Berkeley, building algorithms and open-source tools for MRI reconstruction. I did my undergrad and PhD at Berkeley.
+            In a past life, I worked on large-scale computational imaging at Stanford and UC Berkeley, building algorithms and open-source tools for MRI reconstruction. I created <a class="link-secondary" href="https://sigpy.readthedocs.io/">SigPy</a>, a Python package for signal reconstruction. I did my undergrad and PhD at Berkeley.
           </p>
 
           <hr class="my-4">
 
-          <section aria-labelledby="past-work">
-            <h2 class="h6 mb-3" id="past-work">A few things I worked on</h2>
-            <div class="work-grid">
-              <figure>
-                <video controls loop muted playsinline preload="metadata" aria-label="Extreme MRI: dynamic volumetric MRI reconstruction">
-                  <source src="videos/extreme_mri.mp4" type="video/mp4">
-                  <a href="videos/extreme_mri.mp4">Watch the Extreme MRI reconstruction</a>
-                </video>
-                <figcaption><a class="link-secondary" href="research.html#extreme-mri">Extreme MRI</a></figcaption>
-              </figure>
-              <figure>
-                <a href="research.html#phase-cycling">
-                  <img src="images/phase_cycling.jpg" width="977" height="688" alt="Brain MRI reconstructions without and with phase cycling">
-                </a>
-                <figcaption><a class="link-secondary" href="research.html#phase-cycling">Phase cycling</a></figcaption>
-              </figure>
-              <figure>
-                <video controls loop muted playsinline preload="metadata" aria-label="Multiscale low-rank decomposition of image sequences">
-                  <source src="videos/mslr.mp4" type="video/mp4">
-                  <a href="videos/mslr.mp4">Watch the multiscale decomposition</a>
-                </video>
-                <figcaption><a class="link-secondary" href="research.html#multiscale">Multiscale low-rank decomposition</a></figcaption>
-              </figure>
-              <figure>
-                <video controls loop muted playsinline preload="metadata" aria-label="4D flow MRI denoising with divergence-free wavelets">
-                  <source src="videos/dfw.mp4" type="video/mp4">
-                  <a href="videos/dfw.mp4">Watch the 4D flow denoising</a>
-                </video>
-                <figcaption><a class="link-secondary" href="research.html#flow">4D flow denoising</a></figcaption>
-              </figure>
-              <figure>
-                <a href="https://sigpy.readthedocs.io/">
-                  <img src="images/sigpy.jpg" width="1737" height="1214" alt="SigPy, a Python package for signal reconstruction" loading="lazy">
-                </a>
-                <figcaption><a class="link-secondary" href="https://sigpy.readthedocs.io/">SigPy</a></figcaption>
-              </figure>
-              <figure>
-                <video controls loop muted playsinline preload="metadata" aria-label="Comparison of iterative MRI reconstruction with k-space preconditioning">
-                  <source src="videos/kspace_precond.mp4" type="video/mp4">
-                  <a href="videos/kspace_precond.mp4">Watch the k-space preconditioning comparison</a>
-                </video>
-                <figcaption><a class="link-secondary" href="research.html#kspace">Faster MRI reconstruction</a></figcaption>
-              </figure>
-            </div>
-            <p class="small mt-4 mb-5"><a class="link-secondary" href="research.html">More research, papers, and code</a></p>
-          </section>
+          <figure class="text-center">
+            <video class="research-video" controls loop muted playsinline preload="metadata" aria-label="Extreme MRI: dynamic volumetric MRI reconstruction">
+              <source src="videos/extreme_mri.mp4" type="video/mp4">
+              <a href="videos/extreme_mri.mp4">Watch the Extreme MRI reconstruction</a>
+            </video>
+            <figcaption class="small mt-2"><a class="link-secondary" href="research.html#extreme-mri">Extreme MRI</a></figcaption>
+          </figure>
+          <p class="small mt-4 mb-5"><a class="link-secondary" href="research.html">More research, papers, and code</a></p>
         </div>
       </main>
     </div>
